@@ -13,7 +13,7 @@ from langchain_mistralai import ChatMistralAI
 import pandas as pd
 
 st.set_page_config(page_title="Chat com MySQL", page_icon=":speech_balloon:")
-st.title("Converse com seu banco de dados, ")
+st.title("Talk with your data, ")
 image_path = os.path.join('.', 'src', 'assets', "logo.png")
 st.markdown(
         f"""
@@ -103,7 +103,7 @@ with st.sidebar:
 
     # Database type selection
     db_type = st.selectbox("Select Database Type", ["MySQL", "PostgreSQL", "Oracle"])
-    cloud_server= st.checkbox("Usar banco de dados remoto")
+    cloud_server= st.checkbox("Use a remote Database")
 
     # Toggle for using URI or manual inputs
     use_uri = st.checkbox("Use URI for connection")
