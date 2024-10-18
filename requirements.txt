@@ -1,0 +1,8 @@
+streamlit
+langchain
+langchain-community
+langchain-core==0.1.52
+mysql-connector-python
+groq
+langchain-groq
+langchain-mistralai
