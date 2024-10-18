@@ -6,3 +6,6 @@ mysql-connector-python
 groq
 langchain-groq
 langchain-mistralai
+python-dotenv
+sqlalchemy
+pandas
