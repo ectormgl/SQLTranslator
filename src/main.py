@@ -1,3 +1,4 @@
+import base64
 from dotenv import load_dotenv
 import os
 from langchain_core.messages import AIMessage, HumanMessage
@@ -12,7 +13,16 @@ from langchain_mistralai import ChatMistralAI
 import pandas as pd
 
 st.set_page_config(page_title="Chat com MySQL", page_icon=":speech_balloon:")
-st.title("Converse com seu banco de dados, SQLTranslator!")
+st.title("Converse com seu banco de dados, ")
+image_path = os.path.join('.', 'src', 'assets', "logo.png")
+st.markdown(
+        f"""
+        <div style="display: flex; justify-content: center;">
+            <img src="data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}" width="400">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 useCloud = False
 
 def get_sql_chain(db):
@@ -121,7 +131,8 @@ with st.sidebar:
         with st.spinner(f"Connecting to {db_type} database..."):
             try:
                 if useCloud:
-                    db = init_database(db_type, uri=os.getenv('POSTGRE_URI'))
+                    db = init_database(db_type, uri=os.getenv('POSTGRE_URI'))   
+
 
                 if use_uri:
                     db = init_database(db_type, uri=st.session_state["db_uri"])
