@@ -1,2 +1,3 @@
 ## Welcome to SQLTranslator
-![Descrição da Imagem](./src/assets/sample.gif)
+
+<img src="./src/assets/sample.gif" alt="Descrição do GIF" style="width: 100%;">
